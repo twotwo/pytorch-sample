@@ -2312,7 +2312,7 @@ reference = "aliyun"
 [metadata]
 lock-version = "1.1"
 python-versions = "~3.7.5"
-content-hash = "eb260622efc79fc0d79e45538324fac7c21fc2ead554542e571eefd185d55bc2"
+content-hash = "b37d3443ec3a8d9a7b43a28a705786ed8809105267f23174262e91ed700de00f"
 
 [metadata.files]
 albumentations = [
