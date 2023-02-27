@@ -1,0 +1,73 @@
+[tool.poetry]
+name = "pytorch sample code"
+version = "0.1.0"
+description = "PyTorch Sample Code for Learning"
+authors = ["twotwo <twotwo.li@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "~3.7.5"
+numpy = "^1.21.0"
+jupyter = "^1.0.0"
+matplotlib = "^3.5.0"
+pandas = "^1.1.0"
+opencv-python = "4.5.4.60"
+pillow = "^9.3.0"
+torch = "1.10.2"
+torchvision = "0.11.3"
+sklearn = "^0.0"
+tqdm = "^4.64.1"
+albumentations = "^1.3.0"
+
+[[tool.poetry.source]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple/"
+default = true
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "2.2.0"
+black = "19.10b0"
+click = "8.0.2"
+flake8-pyproject ="^1.1.0"
+mypy = "0.982"
+isort = "5.10.1"
+
+[tool.black]
+line-length = 119
+target-version = ['py37']
+
+[tool.isort]
+ensure_newline_before_comments = true
+force_grid_wrap = "0"
+force_to_top = "setuppath"
+include_trailing_comma = true
+line_length = "119"
+lines_after_imports = "2"
+multi_line_output = "3"
+
+[tool.flake8]
+ignore = ["E203","E231","E501","W503","W504","E402","E741"]
+max-line-length = 119
+
+[tool.mypy]
+python_version = "3.7"
+ignore_missing_imports = true
+# warn_return_any = true
+warn_unused_configs = true
+exclude = [
+    "example/main.py$",
+    "pulmonaryembolism_ctpa_engine/model",
+]
+
+# mypy per-module options:
+
+[[tool.mypy.overrides]]
+module = "lungsegitk.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "pulmonaryembolism_ctpa_engine.model.*"
+ignore_errors = true
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
